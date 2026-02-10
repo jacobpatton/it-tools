@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  it-tools:
+    image: ghcr.io/jacobpatton/it-tools:latest # Or :feature-url-scraper
+    container_name: it-tools
+    restart: unless-stopped
+    ports:
+      - "8080:80"
