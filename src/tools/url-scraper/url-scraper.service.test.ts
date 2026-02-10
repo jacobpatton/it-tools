@@ -30,4 +30,9 @@ describe('url-scraper service', () => {
         const text = 'Just some text';
         expect(extractUrls(text)).toEqual([]);
     });
+
+    it('should exclude trailing markdown characters', () => {
+        const text = '1. **[Ollama](https://docs.ollama.com/linux)**';
+        expect(extractUrls(text)).toEqual(['https://docs.ollama.com/linux']);
+    });
 });
